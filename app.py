@@ -42,12 +42,12 @@ else:
         st.subheader("Konfigurasi Fraksi Elemen")
         st.markdown("Atur komposisi logam (sistem akan otomatis menormalisasi ke 100%):")
         
-        # Slider input dari pengguna
-        fe = st.slider("Besi (Fe)", 0.0, 100.0, 48.0)
-        cr = st.slider("Kromium (Cr)", 0.0, 100.0, 20.0)
-        ni = st.slider("Nikel (Ni)", 0.0, 100.0, 10.0)
-        mo = st.slider("Molybdenum (Mo)", 0.0, 100.0, 2.0)
-        al = st.slider("Aluminium (Al)", 0.0, 100.0, 20.0)
+        # Input angka manual (persentase) dari pengguna
+        fe = st.number_input("Besi (Fe) %", min_value=0.0, max_value=100.0, value=48.0, step=0.1, format="%.2f")
+        cr = st.number_input("Kromium (Cr) %", min_value=0.0, max_value=100.0, value=20.0, step=0.1, format="%.2f")
+        ni = st.number_input("Nikel (Ni) %", min_value=0.0, max_value=100.0, value=10.0, step=0.1, format="%.2f")
+        mo = st.number_input("Molybdenum (Mo) %", min_value=0.0, max_value=100.0, value=2.0, step=0.1, format="%.2f")
+        al = st.number_input("Aluminium (Al) %", min_value=0.0, max_value=100.0, value=20.0, step=0.1, format="%.2f")
         
         # Normalisasi otomatis ke 1.0 (100%)
         total = fe + cr + ni + mo + al
